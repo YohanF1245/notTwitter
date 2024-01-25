@@ -10,7 +10,7 @@ async function getTweetsData() {
 		 tweetsList[key].imgurl,
 		 tweetsList[key].replies,
 		 tweetsList[key].retweet,
-		tweetsList[key].like
+		tweetsList[key].likes
 		)
 	}
 }
@@ -29,8 +29,15 @@ function createPost(pseudo, id, message, imgurl, replies, retweet, likes) {
 	console.log("creating post")
 	console.log('postcreated');
 	const container = document.createElement("div");
+	//container.innerHTML =
+	//	"<div class='row border'><div class='col-auto'><i class='bi bi-person-circle fs-profile-grand'></i></div><div class='col'><div class='row'> <div class='col d-flex flex-row justify-content-between'><p class='fw-bold'>"+pseudo+"<span class='text-muted'>"+id+"</span></p><i class='bi bi-three-dots'></i></div><div/><div class='row'><div class='col'>"+message+"</div></div><div class='row'><div class='col'><img src='"+imgurl+"'class='img-fluid'/></div></div><div class='row text-center my-2'><div class='col'><i class='bi bi-chat'></i>"+replies+"</div><div class='col'><i class='bi bi-repeat'></i>"+retweet+"</div><div class='col'><i class='bi bi-heart'></i>"+likes+"</div><div class='col'><i class='bi bi-graph-up'></i></div><div class='col'><i class='bi bi-bookmark'></i><i class='bi bi-arrow-up'></i></div></div></div></div>";
 	container.innerHTML =
-		"<div class='row border'><div class='col-auto'><i class='bi bi-person-circle fs-profile-grand'></i></div><div class='col'><div class='row'> <div class='col d-flex flex-row justify-content-between'><p class='fw-bold'>"+pseudo+"<span class='text-muted'>"+id+"</span></p><i class='bi bi-three-dots'></i></div><div/><div class='row'><div class='col'>"+message+"</div></div><div class='row'><div class='col'><img src='"+imgurl+"'class='img-fluid'/></div></div><div class='row text-center my-2'><div class='col'><i class='bi bi-chat'></i>"+replies+"</div><div class='col'><i class='bi bi-repeat'></i>"+retweet+"</div><div class='col'><i class='bi bi-heart'></i>"+likes+"</div><div class='col'><i class='bi bi-graph-up'></i></div><div class='col'><i class='bi bi-bookmark'></i><i class='bi bi-arrow-up'></i></div></div></div></div>";
+		"<div class='row border'><div class='col-auto'><i class='bi bi-person-circle fs-profile-grand'></i></div><div class='col'><div class='row'> <div class='col d-flex flex-row justify-content-between'><p class='fw-bold'>" +pseudo + "<span class='text-muted'>" + id + "</span></p><i class='bi bi-three-dots'></i></div><div/><div class='row'><div class='col'>" + message + "</div></div>";
+	if (imgurl != undefined) {
+		container.innerHTML += "<div class='row'><div class='col'><img src='" + imgurl + "'class='img-fluid'/></div></div>";
+	}
+	container.innerHTML += "<div class='row text-center my-2'><div class='col'><i class='bi bi-chat'></i>" + replies + "</div><div class='col'><i class='bi bi-repeat'></i>" + retweet + "</div><div class='col'><i class='bi bi-heart'></i>" + likes + "</div><div class='col'><i class='bi bi-graph-up'></i></div><div class='col'><i class='bi bi-bookmark'></i><i class='bi bi-arrow-up'></i></div></div></div ></div > ";
+	
 	document.getElementById("fillArea").appendChild(container);
 	//document.body.appendChild(container);
 }
