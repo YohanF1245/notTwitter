@@ -1,6 +1,6 @@
 async function getTweetsData() {
 	
-	const response = await fetch("../JSON/tweets.JSON");
+	const response = await fetch("../tweets.JSON");
 	const tweetsList = await response.json();
 	for (const key in tweetsList) {
 		createPost(
