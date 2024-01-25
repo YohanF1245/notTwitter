@@ -1,0 +1,33 @@
+.navMid:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+.underlineNav{
+    text-decoration: underline!important;
+    text-underline-offset: 1.5rem;
+    text-decoration-color:lightblue!important;
+    text-decoration-thickness: 0.3rem !important;
+}
+.inputSearch:focus{
+    outline: none;
+}
+.bg-lightgray{
+    background-color: rgba(247,249,249,1.00)!important;
+}
+.vh20{
+    height:20vh!important;
+}
+.roundSize{
+    height: 15vh!important;
+    width: 15vh!important;
+}
+.topBar{
+    background-color: rgba(255, 255, 255, 0.512);
+    z-index: 99;
+}
+.x-over{
+    overflow-x:hidden!important;
+}
+.fs-profile-grand{
+    font-size: 60px!important;
+}
