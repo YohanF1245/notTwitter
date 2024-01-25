@@ -13,7 +13,7 @@
 		/>
 		<link href="css/style.css" rel="stylesheet">
 	</head>
-	<body>
+	<body  onload="populate('post')">
 		<div class="container-fluid px-5">
 			<div class="row gx-5  ">
 				<div class="col-2 offset-2 fs-4 position-fixed min-vh-100 d-flex flex-column">
@@ -167,7 +167,7 @@
 						<div class="col-2">0 Followers</div>
 					</div>
 					<div class="row text-center mb-3">
-						<a class="col text-dark text-dark text-decoration-none navMid p-2 fw-bold underlineNav" onclick="changeFrame('post')" id="post">Posts</a>
+						<a class="col text-dark text-dark text-decoration-none navMid p-2 fw-bold underlineNav" onclick="populate()" id="post">Posts</a>
 						<a class="col text-dark text-decoration-none navMid p-2" onclick="changeFrame('replies')" id="replies">Replies</a>
 						<a class="col text-dark text-decoration-none navMid p-2" onclick="changeFrame('highlights')" id="highlights">
 							Highlights
@@ -179,7 +179,10 @@
 						<hr class="hr" />
 					</div>
 					<div class="row">
-						<div class="embed-responsive embed-responsive-16by9 border border-danger">
+						<div class="col" id="fillArea">
+
+						</div>
+						<!-- <div class="embed-responsive embed-responsive-16by9 border border-danger">
 							<iframe
 								onload="resizeIframe(this)"
 								class="embed-responsive-item w-100   "
@@ -188,7 +191,7 @@
 								src="html/post.html"
 								allowfullscreen
 							></iframe>
-						</div>
+						</div> -->
 					</div>
 				</div>				
 				<div class="col-2  offset-8 position-fixed">
@@ -427,6 +430,7 @@
 			</div>
 		</div>
 		<script src="script/script.js" defer></script>
+		<script src="script/create-post.js" defer></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
